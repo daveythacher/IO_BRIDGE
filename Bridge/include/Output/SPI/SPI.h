@@ -12,6 +12,7 @@
 class SPI : public Output {
     public:
         SPI(Input *input);
+        virtual ~SPI();
 
         void write();
     

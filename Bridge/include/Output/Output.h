@@ -12,8 +12,9 @@
 class Output {
     public:
         Output(Input *input);
+        virtual ~Output();
 
-        void write();
+        virtual void write() = 0;
     
     protected:
         Output();

@@ -8,6 +8,6 @@ Output::Output(Input *input) {
     _input = input;
 }
 
-void Output::write() {
-    // Not implemented, should be hidden
+Output::~Output() {
+    // Do nothing
 }

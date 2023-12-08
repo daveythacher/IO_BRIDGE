@@ -12,20 +12,6 @@ Input::Input(uint8_t *vector, uint16_t len, uint16_t size) {
     _size = size;
 }
 
-bool Input::canRead() {
-    // Not implemented, should be hidden
-    return false;
-}
-
-void Input::read(uint8_t **buf, uint16_t *len) {
-    // Not implemented, should be hidden
-}
-
-bool Input::hasFlowControl() {
-    // Not implemented, should be hidden
-    return false;
-}
-
-void Input::signalFull() {
-    // Not implemented, should be hidden
+Input::~Input() {
+    // Do nothing
 }

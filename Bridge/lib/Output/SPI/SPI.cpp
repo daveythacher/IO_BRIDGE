@@ -8,6 +8,10 @@ SPI::SPI(Input *input) : Output(input) {
     // TODO:
 }
 
+SPI::~SPI() {
+    // Do nothing
+}
+
 void SPI::write() {
     // TODO:
 }

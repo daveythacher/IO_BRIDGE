@@ -13,6 +13,7 @@
 class BitBang : public Input {
     public:
         BitBang(uint8_t *vector, uint16_t len, uint16_t size);
+        virtual ~BitBang();
 
         bool canRead();
         void read(uint8_t **buf, uint16_t *len);

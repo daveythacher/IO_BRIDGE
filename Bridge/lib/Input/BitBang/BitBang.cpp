@@ -8,6 +8,10 @@ BitBang::BitBang(uint8_t *vector, uint16_t len, uint16_t size) : Input(vector, l
     // TODO:
 }
 
+BitBang::~BitBang() {
+    // Do nothing
+}
+
 bool BitBang::canRead() {
     // TODO:
     return false;
