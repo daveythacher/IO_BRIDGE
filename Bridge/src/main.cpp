@@ -11,16 +11,19 @@
 #include "Input/BitBang/BitBang.h"
 #include "Output/SPI/SPI.h"
 
-static uint8_t vector0[32 * 1024];
-static uint8_t vector1[32 * 1024];
-static uint8_t vector2[32 * 1024];
-static uint8_t vector3[32 * 1024];
+constexpr uint16_t vector_size = 32 * 1024;
+constexpr uint16_t packet_size = 16;
+
+static uint8_t vector0[vector_size];
+static uint8_t vector1[vector_size];
+static uint8_t vector2[vector_size];
+static uint8_t vector3[vector_size];
 
 static void __not_in_flash_func(loop)() {
-    BitBang in0(vector0, sizeof(vector0), 16);
-    BitBang in1(vector1, sizeof(vector1), 16);
-    BitBang in2(vector2, sizeof(vector2), 16);
-    BitBang in3(vector3, sizeof(vector3), 16);
+    BitBang in0(vector0, vector_size, packet_size);
+    BitBang in1(vector1, vector_size, packet_size);
+    BitBang in2(vector2, vector_size, packet_size);
+    BitBang in3(vector3, vector_size, packet_size);
     SPI out0(&in0);
     SPI out1(&in1);
     SPI out2(&in2);
