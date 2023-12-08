@@ -10,24 +10,25 @@
 #include "Input/BitBang/BitBang.h"
 #include "Output/SPI/SPI.h"
 
-constexpr uint16_t vector_size = 32 * 1024;
-constexpr uint16_t packet_size = 16;
+static constexpr uint16_t vector_size = 32 * 1024;
+static constexpr uint16_t packet_size = 16;
 
 static uint8_t vector0[vector_size];
 static uint8_t vector1[vector_size];
 static uint8_t vector2[vector_size];
 static uint8_t vector3[vector_size];
 
-static void loop() {
-    BitBang in0(vector0, vector_size, packet_size);
-    BitBang in1(vector1, vector_size, packet_size);
-    BitBang in2(vector2, vector_size, packet_size);
-    BitBang in3(vector3, vector_size, packet_size);
-    SPI out0(&in0);
-    SPI out1(&in1);
-    SPI out2(&in2);
-    SPI out3(&in3);
+static BitBang in0(vector0, vector_size, packet_size);
+static BitBang in1(vector1, vector_size, packet_size);
+static BitBang in2(vector2, vector_size, packet_size);
+static BitBang in3(vector3, vector_size, packet_size);
 
+static SPI out0(&in0);
+static SPI out1(&in1);
+static SPI out2(&in2);
+static SPI out3(&in3);
+
+static void loop() {
     while (1) {
         out0.write();
         out1.write();
