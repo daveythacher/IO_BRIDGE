@@ -17,10 +17,10 @@ static uint8_t vector2[32 * 1024];
 static uint8_t vector3[32 * 1024];
 
 static void __not_in_flash_func(loop)() {
-    BitBang in0(vector0, sizeof(vector0), 1);
-    BitBang in1(vector1, sizeof(vector1), 1);
-    BitBang in2(vector2, sizeof(vector2), 1);
-    BitBang in3(vector3, sizeof(vector3), 1);
+    BitBang in0(vector0, sizeof(vector0), 16);
+    BitBang in1(vector1, sizeof(vector1), 16);
+    BitBang in2(vector2, sizeof(vector2), 16);
+    BitBang in3(vector3, sizeof(vector3), 16);
     SPI out0(&in0);
     SPI out1(&in1);
     SPI out2(&in2);
