@@ -1,6 +1,5 @@
 add_executable(bridge 
     ./main.cpp
-    ./isr.cpp
 )
 
 target_include_directories(bridge PRIVATE
