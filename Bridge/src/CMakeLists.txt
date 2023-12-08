@@ -39,6 +39,8 @@ target_link_libraries(bridge
     pico_stdio_usb
     pico_runtime
     pico_multicore
+    SPI
+    BitBang
 )
 
 target_link_options(bridge 

@@ -21,3 +21,4 @@ function(pico_add_dis_output2 TARGET)
 endfunction()
 
 add_subdirectory(src)
+add_subdirectory(lib)
