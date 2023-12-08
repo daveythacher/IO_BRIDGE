@@ -7,12 +7,9 @@
 #ifndef SPI_H
 #define SPI_H
 
-#include "Output/Output.h"
-
-class SPI : public Output {
+template <typename T> class SPI {
     public:
-        SPI(Input *input);
-        virtual ~SPI();
+        SPI(T *input);
 
         void write();
     
@@ -20,6 +17,7 @@ class SPI : public Output {
         SPI();
 
     private:
+        T *_input;
 
 };
 

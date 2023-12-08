@@ -8,23 +8,24 @@
 #define BITBANG_H
 
 #include <stdint.h>
-#include "Input/Input.h"
 
-class BitBang : public Input {
+class BitBang {
     public:
         BitBang(uint8_t *vector, uint16_t len, uint16_t size);
-        virtual ~BitBang();
 
         bool canRead();
         void read(uint8_t **buf, uint16_t *len);
     
     protected:
         BitBang();
-        
+
         bool hasFlowControl();
         void signalFull();
 
     private:
+        uint8_t *_vector;
+        uint16_t _len;
+        uint16_t _size;
 
 };
 

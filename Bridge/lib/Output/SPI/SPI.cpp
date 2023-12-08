@@ -1,17 +1,18 @@
 #include "Output/SPI/SPI.h"
+#include "Input/BitBang/BitBang.h"
 
-SPI::SPI() : Output() {
+template <typename T> SPI<T>::SPI() {
+    _input = nullptr;
     // Do nothing
 }
 
-SPI::SPI(Input *input) : Output(input) {
+template <typename T> SPI<T>::SPI(T *input) {
+    _input = input;
     // TODO:
 }
 
-SPI::~SPI() {
-    // Do nothing
-}
-
-void SPI::write() {
+template <typename T> void SPI<T>::write() {
     // TODO:
 }
+
+template class SPI<BitBang>;

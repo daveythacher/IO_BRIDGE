@@ -1,15 +1,17 @@
 #include "Input/BitBang/BitBang.h"
 
-BitBang::BitBang() : Input() {
+BitBang::BitBang() {
+    _vector = nullptr;
+    _len = 0;
+    _size = 0;
     // Do nothing
 }
 
-BitBang::BitBang(uint8_t *vector, uint16_t len, uint16_t size) : Input(vector, len, size) {
+BitBang::BitBang(uint8_t *vector, uint16_t len, uint16_t size) {
+    _vector = vector;
+    _len = len;
+    _size = size;
     // TODO:
-}
-
-BitBang::~BitBang() {
-    // Do nothing
 }
 
 bool BitBang::canRead() {
