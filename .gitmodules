@@ -1,0 +1,3 @@
+[submodule "Bridge/lib/pico-sdk"]
+	path = Bridge/lib/pico-sdk
+	url = https://github.com/raspberrypi/pico-sdk.git
