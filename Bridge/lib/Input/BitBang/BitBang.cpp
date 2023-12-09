@@ -27,14 +27,23 @@ bool BitBang::canRead() {
 }
 
 void BitBang::read(uint8_t *buf) {
-
+    // Read from FIFO
     if (_read_idex != _write_index) {
-        // TODO:
+        buf = _vector + (packet_size * _read_idex);
+        _read_idex = (_read_idex + 1) % (vector_size / packet_size);
+        _isEmpty = _read_idex == _write_index;
     }
 
+    // Check pending write to FIFO
     if (dma_channel_get_irq0_status(_dma_chan)) {      
-        // TODO:
+        _write_index = (_write_index + 1) % (vector_size / packet_size);
+        _isFull = _read_idex == _write_index;
         dma_hw->intr = 1 << _dma_chan;                                          // Clear the interrupt
+    }
+    
+    // Start write to FIFO
+    if (!_isFull) {
+        // TODO:
     }
 
     if (hasFlowControl()) {
