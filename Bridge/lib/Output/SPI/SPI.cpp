@@ -30,9 +30,7 @@ template <typename T> void SPI<T>::write() {
         }
     }
 
-    if (_input->canRead()) {
-        _input->read(buf);
-
+    if (_input->read(buf)) {
         // TODO:
 
         _armed = true;

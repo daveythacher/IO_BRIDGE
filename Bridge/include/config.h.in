@@ -10,11 +10,11 @@
     // -- DO NOT EDIT BELOW THIS LINE --
 
     #cmakedefine DEFINE_OUTPUT      @DEFINE_OUTPUT@
-    #cmakedefine DEFINE_INPUT      @DEFINE_INPUT@
+    #cmakedefine DEFINE_INPUT       @DEFINE_INPUT@
 
     #include <stdint.h>
 
-    constexpr uint16_t packet_size = 16;
-    constexpr uint16_t vector_size = packet_size * 2 * 1024;
+    constexpr uint16_t packet_size = 32;
+    constexpr uint16_t vector_size = packet_size * 1024;
 
 #endif
