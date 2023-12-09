@@ -6,18 +6,19 @@ BitBang::BitBang() {
     // Do nothing
 }
 
-BitBang::BitBang(uint8_t *vector) {
+BitBang::BitBang(uint8_t *vector, int full_pin) {
     _vector = vector;
+    _full_pin = full_pin;
     _read_idex = 0;
     _write_index = 0;
     _isFull = false;
     _isEmpty = true;
     _dma_chan = dma_claim_unused_channel(true);
 
-    gpio_init(full_pin);
-    gpio_set_dir(full_pin, true);
-    gpio_put(full_pin, false);
-    
+    gpio_init(_full_pin);
+    gpio_set_dir(_full_pin, true);
+    gpio_put(_full_pin, false);
+
     // TODO:
 }
 
@@ -46,5 +47,5 @@ bool BitBang::hasFlowControl() {
 }
 
 void BitBang::signalFull() {
-    gpio_put(full_pin, _isFull);
+    gpio_put(_full_pin, _isFull);
 }

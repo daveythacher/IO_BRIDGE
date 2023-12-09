@@ -14,10 +14,10 @@
 static uint8_t vectors[4][vector_size];
 
 template <typename Input, typename Output> static void loop() {
-    Input in0(vectors[0]);
-    Input in1(vectors[1]);
-    Input in2(vectors[2]);
-    Input in3(vectors[3]);
+    Input in0(vectors[0], 16);
+    Input in1(vectors[1], 17);
+    Input in2(vectors[2], 18);
+    Input in3(vectors[3], 19);
     Output out0(&in0);
     Output out1(&in1);
     Output out2(&in2);

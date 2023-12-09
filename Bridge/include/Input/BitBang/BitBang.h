@@ -11,7 +11,7 @@
 
 class BitBang {
     public:
-        BitBang(uint8_t *vector);
+        BitBang(uint8_t *vector, int full_pin);
 
         bool canRead();
         void read(uint8_t *buf);
@@ -29,8 +29,7 @@ class BitBang {
         bool _isEmpty;
         bool _isFull;
         int _dma_chan;
-
-        const int full_pin = 22;
+        int _full_pin;
 
 };
 
