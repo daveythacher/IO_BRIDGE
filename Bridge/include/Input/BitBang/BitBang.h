@@ -12,7 +12,7 @@
 
 class BitBang {
     public:
-        BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int full_pin);
+        BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int clk_pin, int full_pin);
 
         bool read(uint8_t **buf);
     
@@ -30,6 +30,7 @@ class BitBang {
         bool _armed;
         int _dma_chan;
         int _full_pin;
+        int _clk_pin;
         uint8_t _pin_range_index;
         PIO _pio;
         int _sm;
