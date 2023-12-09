@@ -25,12 +25,12 @@ BitBang::BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int full_pin
     // TODO: Hardware setup
 }
 
-bool BitBang::read(uint8_t *buf) {
+bool BitBang::read(uint8_t **buf) {
     bool result = false;
 
     // Read from FIFO
-    if (_read_idex != _write_index) {
-        buf = _vector + (packet_size * _read_idex);
+    if (_read_idex != _write_index && buf != nullptr) {
+        *buf = _vector + (packet_size * _read_idex);
         _read_idex = (_read_idex + 1) % (vector_size / packet_size);
         result = true;
     }

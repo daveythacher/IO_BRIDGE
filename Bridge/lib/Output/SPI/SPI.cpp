@@ -18,7 +18,7 @@ template <typename T> SPI<T>::SPI(T *input, PIO pio, uint8_t pin_range_index) {
 }
 
 template <typename T> void SPI<T>::write() {
-    uint8_t buf[packet_size];
+    uint8_t *buf;
 
     if (_armed) {
         if (dma_channel_get_irq0_status(_dma_chan)) {      
@@ -26,14 +26,17 @@ template <typename T> void SPI<T>::write() {
             _armed = false;
         }
         else {
+            _input->read(nullptr);
             return;
         }
     }
 
-    if (_input->read(buf)) {
-        // TODO:
+    if (!_armed) {
+        if (_input->read(&buf)) {
+            // TODO:
 
-        _armed = true;
+            _armed = true;
+        }
     }
 }
 

@@ -14,7 +14,7 @@ class BitBang {
     public:
         BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int full_pin);
 
-        bool read(uint8_t *buf);
+        bool read(uint8_t **buf);
     
     protected:
         BitBang();
