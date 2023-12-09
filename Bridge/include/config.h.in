@@ -1,0 +1,15 @@
+/* 
+ * File:   config.h
+ * Author: David Thacher
+ * License: GPL 3.0
+ */
+ 
+#ifndef CONFIG_H
+#define CONFIG_H
+
+    // -- DO NOT EDIT BELOW THIS LINE --
+
+    #cmakedefine DEFINE_OUTPUT      @DEFINE_OUTPUT@
+    #cmakedefine DEFINE_INPUT      @DEFINE_INPUT@
+
+#endif

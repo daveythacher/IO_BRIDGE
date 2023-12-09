@@ -9,6 +9,7 @@
 #include "hardware/timer.h"
 #include "Input/BitBang/BitBang.h"
 #include "Output/SPI/SPI.h"
+#include "config.h"
 
 static constexpr uint16_t packet_size = 16;
 static constexpr uint16_t vector_size = 32 * 1024;
@@ -38,7 +39,7 @@ int main() {
     stdio_usb_init();               // Enable picotool to call bootsel mode
     busy_wait_ms(1000);             // Make time (1 second) for picotool before system loads
     watchdog_enable(100, false);    // Make sure picotool can never be disconnected
-    loop<BitBang, SPI<BitBang>>();
+    loop<DEFINE_INPUT, DEFINE_OUTPUT<DEFINE_INPUT>>();
 }
 
 

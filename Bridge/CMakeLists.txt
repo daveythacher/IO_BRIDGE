@@ -20,5 +20,10 @@ function(pico_add_dis_output2 TARGET)
     )
 endfunction()
 
+
+set(DEFINE_INPUT "BitBang" CACHE STRING "Input algorithm name")
+set(DEFINE_OUTPUT "SPI" CACHE STRING "Output algorithm name")
+
+add_subdirectory(include)
 add_subdirectory(src)
 add_subdirectory(lib)
