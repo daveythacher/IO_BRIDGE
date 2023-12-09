@@ -23,6 +23,7 @@ template <typename T> class SPI {
         T *_input;
         uint8_t _pin_range_index;
         PIO _pio;
+        int _sm;
 
 };
 

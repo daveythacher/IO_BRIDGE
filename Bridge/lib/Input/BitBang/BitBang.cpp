@@ -16,6 +16,7 @@ BitBang::BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int full_pin
     _isFull = false;
     _isEmpty = true;
     _dma_chan = dma_claim_unused_channel(true);
+    _sm = pio_claim_unused_sm(_pio, true);
 
     gpio_init(_full_pin);
     gpio_set_dir(_full_pin, true);

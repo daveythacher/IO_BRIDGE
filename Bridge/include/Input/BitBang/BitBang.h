@@ -33,6 +33,7 @@ class BitBang {
         int _full_pin;
         uint8_t _pin_range_index;
         PIO _pio;
+        int _sm;
 
 };
 

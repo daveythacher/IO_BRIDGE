@@ -9,6 +9,7 @@ template <typename T> SPI<T>::SPI(T *input, PIO pio, uint8_t pin_range_index) {
     _input = input;
     _pin_range_index = pin_range_index;
     _pio = pio;
+    _sm = pio_claim_unused_sm(_pio, true);
 
     // TODO:
 }
