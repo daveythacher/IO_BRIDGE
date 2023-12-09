@@ -29,6 +29,7 @@ class BitBang {
         uint16_t _write_index;
         bool _isEmpty;
         bool _isFull;
+        bool _armed;
         int _dma_chan;
         int _full_pin;
         uint8_t _pin_range_index;

@@ -21,7 +21,9 @@ template <typename T> class SPI {
 
     private:
         T *_input;
+        bool _armed;
         uint8_t _pin_range_index;
+        int _dma_chan;
         PIO _pio;
         int _sm;
 

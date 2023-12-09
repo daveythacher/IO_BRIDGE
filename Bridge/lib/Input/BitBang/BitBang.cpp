@@ -15,6 +15,7 @@ BitBang::BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int full_pin
     _write_index = 0;
     _isFull = false;
     _isEmpty = true;
+    _armed = false;
     _dma_chan = dma_claim_unused_channel(true);
     _sm = pio_claim_unused_sm(_pio, true);
 
@@ -22,7 +23,7 @@ BitBang::BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int full_pin
     gpio_set_dir(_full_pin, true);
     gpio_put(_full_pin, false);
 
-    // TODO:
+    // TODO: Hardware setup
 }
 
 bool BitBang::canRead() {
@@ -42,11 +43,14 @@ void BitBang::read(uint8_t *buf) {
         _write_index = (_write_index + 1) % (vector_size / packet_size);
         _isFull = _read_idex == _write_index;
         dma_hw->intr = 1 << _dma_chan;                                          // Clear the interrupt
+        _armed = false;
     }
     
     // Start write to FIFO
-    if (!_isFull) {
-        // TODO:
+    if (!_isFull && !_armed) {
+        // TODO: Start DMA
+
+        _armed = true;
     }
 
     if (hasFlowControl()) {
