@@ -11,7 +11,7 @@
 
 template <typename T> class SPI {
     public:
-        SPI(T *input);
+        SPI(T *input, uint8_t pin_range_index);
 
         void write();
     
@@ -20,6 +20,7 @@ template <typename T> class SPI {
 
     private:
         T *_input;
+        uint8_t _pin_range_index;
 
 };
 

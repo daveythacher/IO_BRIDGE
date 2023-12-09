@@ -5,8 +5,9 @@ template <typename T> SPI<T>::SPI() {
     // Do nothing
 }
 
-template <typename T> SPI<T>::SPI(T *input) {
+template <typename T> SPI<T>::SPI(T *input, uint8_t pin_range_index) {
     _input = input;
+    _pin_range_index = pin_range_index;
 
     // TODO:
 }
