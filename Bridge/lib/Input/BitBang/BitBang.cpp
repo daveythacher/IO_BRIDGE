@@ -6,9 +6,11 @@ BitBang::BitBang() {
     // Do nothing
 }
 
-BitBang::BitBang(uint8_t *vector, int full_pin) {
+BitBang::BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int full_pin) {
     _vector = vector;
     _full_pin = full_pin;
+    _pin_range_index = pin_range_index;
+    _pio = pio;
     _read_idex = 0;
     _write_index = 0;
     _isFull = false;

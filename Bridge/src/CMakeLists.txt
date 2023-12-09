@@ -38,6 +38,7 @@ target_link_libraries(bridge
     pico_stdio_usb
     pico_runtime
     hardware_dma
+    hardware_pio
     ${DEFINE_OUTPUT}
     ${DEFINE_INPUT}
 )
