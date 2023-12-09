@@ -11,15 +11,13 @@
 #include "Output/SPI/SPI.h"
 #include "config.h"
 
-static constexpr uint16_t packet_size = 16;
-static constexpr uint16_t vector_size = 32 * 1024;
 static uint8_t vectors[4][vector_size];
 
 template <typename Input, typename Output> static void loop() {
-    Input in0(vectors[0], vector_size, packet_size);
-    Input in1(vectors[1], vector_size, packet_size);
-    Input in2(vectors[2], vector_size, packet_size);
-    Input in3(vectors[3], vector_size, packet_size);
+    Input in0(vectors[0]);
+    Input in1(vectors[1]);
+    Input in2(vectors[2]);
+    Input in3(vectors[3]);
     Output out0(&in0);
     Output out1(&in1);
     Output out2(&in2);

@@ -7,6 +7,8 @@
 #ifndef SPI_H
 #define SPI_H
 
+#include "config.h"
+
 template <typename T> class SPI {
     public:
         SPI(T *input);

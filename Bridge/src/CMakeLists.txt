@@ -37,6 +37,7 @@ pico_enable_stdio_uart(bridge 0)
 target_link_libraries(bridge 
     pico_stdio_usb
     pico_runtime
+    hardware_dma
     ${DEFINE_OUTPUT}
     ${DEFINE_INPUT}
 )
