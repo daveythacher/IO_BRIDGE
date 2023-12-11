@@ -1,5 +1,7 @@
 add_executable(bridge 
     ./main.cpp
+    ./test.cpp
+    ./adapter.cpp
 )
 
 target_include_directories(bridge PRIVATE

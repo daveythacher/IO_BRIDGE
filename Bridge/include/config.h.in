@@ -17,4 +17,11 @@
     constexpr uint16_t packet_size = 32;
     constexpr uint16_t vector_size = packet_size * 1024;
 
+    template <typename Input, typename Output> void loop();
+
+    #include "Input/BitBang/BitBang.h"
+    #include "Input/Input_Test/Input_Test.h"
+    #include "Output/SPI/SPI.h"
+    #include "Output/Output_Test/Output_Test.h"
+
 #endif
