@@ -1,12 +1,12 @@
 #include "hardware/dma.h"
 #include "hardware/gpio.h"
-#include "Input/BitBang/BitBang.h"
+#include "Input/BitBang/BitBang_Input.h"
 
-BitBang::BitBang() {
+BitBang_Input::BitBang_Input() {
     // Do nothing
 }
 
-BitBang::BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int clk_pin, int full_pin) {
+BitBang_Input::BitBang_Input(uint8_t *vector, PIO pio, uint8_t pin_range_index, int clk_pin, int full_pin) {
     _vector = vector;
     _full_pin = full_pin;
     _clk_pin = clk_pin;
@@ -26,7 +26,7 @@ BitBang::BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int clk_pin,
     // TODO: Hardware setup
 }
 
-bool BitBang::read(uint8_t **buf) {
+bool BitBang_Input::read(uint8_t **buf) {
     bool result = false;
 
     // Read from FIFO
@@ -58,10 +58,10 @@ bool BitBang::read(uint8_t **buf) {
     return result;
 }
 
-bool BitBang::hasFlowControl() {
+bool BitBang_Input::hasFlowControl() {
     return true;
 }
 
-void BitBang::signalFull() {
+void BitBang_Input::signalFull() {
     gpio_put(_full_pin, _isFull);
 }

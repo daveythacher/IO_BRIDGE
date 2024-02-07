@@ -1,12 +1,12 @@
 #include "hardware/dma.h"
-#include "Output/SPI/SPI.h"
-#include "Input/BitBang/BitBang.h"
+#include "Output/SPI/SPI_Output.h"
+#include "Input/BitBang/BitBang_Input.h"
 
-template <typename T> SPI<T>::SPI() {
+template <typename T> SPI_Output<T>::SPI_Output() {
     // Do nothing
 }
 
-template <typename T> SPI<T>::SPI(T *input, PIO pio, uint8_t pin_range_index) {
+template <typename T> SPI_Output<T>::SPI_Output(T *input, PIO pio, uint8_t pin_range_index) {
     _input = input;
     _pin_range_index = pin_range_index;
     _pio = pio;
@@ -17,7 +17,7 @@ template <typename T> SPI<T>::SPI(T *input, PIO pio, uint8_t pin_range_index) {
     // TODO:
 }
 
-template <typename T> void SPI<T>::write() {
+template <typename T> void SPI_Output<T>::write() {
     uint8_t *buf;
 
     if (_armed) {
@@ -40,5 +40,5 @@ template <typename T> void SPI<T>::write() {
     }
 }
 
-template class SPI<BitBang>;
-template class SPI<Input_Test>;
+template class SPI_Output<BitBang>;
+template class SPI_Output<Input_Test>;

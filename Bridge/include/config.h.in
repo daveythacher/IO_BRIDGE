@@ -19,9 +19,11 @@
 
     template <typename Input, typename Output> void loop();
 
-    #include "Input/BitBang/BitBang.h"
+    #include "Input/BitBang/BitBang_Input.h"
     #include "Input/Input_Test/Input_Test.h"
-    #include "Output/SPI/SPI.h"
+    #include "Input/SPI/SPI_Input.h"
+    #include "Output/SPI/SPI_Output.h"
     #include "Output/Output_Test/Output_Test.h"
+    #include "Output/UART/UART_Output.h"
 
 #endif

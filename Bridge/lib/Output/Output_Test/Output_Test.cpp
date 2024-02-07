@@ -40,4 +40,4 @@ template <typename T> void Output_Test<T>::write() {
     }
 }
 
-template class Output_Test<BitBang>;
+template class Output_Test<BitBang_Input>;

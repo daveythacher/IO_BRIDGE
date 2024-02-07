@@ -1,23 +1,23 @@
 /* 
- * File:   BitBang.h
+ * File:   SPI_Input.h
  * Author: David Thacher
  * License: GPL 3.0
  */
 
-#ifndef BITBANG_H
-#define BITBANG_H
+#ifndef SPI_INPUT_H
+#define SPI_INPUT_H
 
 #include "hardware/pio.h"
 #include "config.h"
 
-class BitBang {
+class SPI_Input {
     public:
-        BitBang(uint8_t *vector, PIO pio, uint8_t pin_range_index, int clk_pin, int full_pin);
+        SPI_Input(uint8_t *vector, PIO pio, uint8_t pin_range_index, int clk_pin, int full_pin);
 
         bool read(uint8_t **buf);
     
     protected:
-        BitBang();
+        SPI_Input();
 
         bool hasFlowControl();
         void signalFull();

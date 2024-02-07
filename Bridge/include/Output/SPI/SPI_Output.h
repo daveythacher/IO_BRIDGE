@@ -1,23 +1,23 @@
 /* 
- * File:   SPI.h
+ * File:   SPI_Output.h
  * Author: David Thacher
  * License: GPL 3.0
  */
 
-#ifndef SPI_H
-#define SPI_H
+#ifndef SPI_OUTPUT_H
+#define SPI_OUTPUT_H
 
 #include "hardware/pio.h"
 #include "config.h"
 
-template <typename T> class SPI {
+template <typename T> class SPI_Output {
     public:
-        SPI(T *input, PIO pio, uint8_t pin_range_index);
+        SPI_Output(T *input, PIO pio, uint8_t pin_range_index);
 
         void write();
     
     protected:
-        SPI();
+        SPI_Output();
 
     private:
         T *_input;

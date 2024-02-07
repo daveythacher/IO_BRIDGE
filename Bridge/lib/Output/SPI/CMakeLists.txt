@@ -1,5 +1,5 @@
-add_library(SPI INTERFACE)
+add_library(SPI_Output INTERFACE)
 
-target_sources(SPI INTERFACE
-    SPI.cpp
+target_sources(SPI_Output INTERFACE
+    SPI_Output.cpp
 )
